@@ -1,114 +1,89 @@
 # Noorlytics CLI
 
-Noorlytics is a local-first CLI tool for analyzing technical debt, dependencies,
-licenses, and structure in codebases.
+Noorlytics is a local-first CLI that analyzes technical debt, dependencies, and code quality using AI.
 
-It runs AI models locally on your machine using Ollama, with optional support
-for OpenAI if you explicitly enable it.
+It runs locally with Ollama by default. Your code never leaves your machine.
 
-Your source code stays on your computer.
+---
 
---------------------------------------------------------------------
+## Quick Start (2–3 minutes)
 
-FEATURES
+### 1. Install Ollama
 
-- Analyze source code for technical debt
-- Dependency analysis:
-  - risky or incompatible licenses
-  - known security vulnerabilities
-- AI-powered refactoring suggestions
-- Unit test stub generation
-- Markdown and JSON reports
-- Local-first execution via Ollama
-- Optional OpenAI support
-- .env-based configuration
-
---------------------------------------------------------------------
-
-REQUIREMENTS
-
-Supported platforms:
-- macOS
-- Linux
-- Windows (not supported yet)
-
-Software:
-- Local AI runtime: https://ollama.com/
-- Optional: OpenAI API key (only if using OpenAI mode)
-
-No Python, pip, or virtual environment is required.
-
---------------------------------------------------------------------
-
-PACKAGE CONTENTS
-
-After unzipping `noorlytics.zip`, you will find:
-
-- noor
-  The Noorlytics CLI binary.
-  This is the only executable you need to run Noorlytics.
-
-- README.md
-  Documentation with installation, configuration, and usage instructions.
-
-- .env.sample
-  A sample environment configuration file.
-  Copy this file to `~/.noorlytics/.env` and add your license key and settings.
-
-- LICENSE
-  License information for Noorlytics.
-
---------------------------------------------------------------------
-
-INSTALLATION
-
-1) Install Ollama
+**Mac:**
 
     brew install ollama
+
+**Linux:**
+
+    curl -fsSL https://ollama.com/install.sh | sh
+
+Start Ollama:
+
+    ollama serve
+
+Download a model (recommended):
+
     ollama pull mistral
 
-Any supported Ollama model can be used. Mistral is used as default.
+---
 
---------------------------------------------------------------------
+### 2. Install Noorlytics
 
-2) Install Noorlytics CLI
+Download `noorlytics.zip` and unzip it.
 
-Download the file `noorlytics.zip` and unzip it.
+You’ll get:
 
-Make the binary executable and place it in your PATH:
+    noor
+    .env.sample
+    README.md
+    LICENSE
+
+Make it executable and move it to your PATH:
 
     chmod +x noor
     sudo mv noor /usr/local/bin/noor
 
-Verify installation:
+Verify:
 
     noor --help
 
---------------------------------------------------------------------
+---
 
-CONFIGURATION (.env)
+### 3. Configure Noorlytics
 
-Noorlytics is configured using environment variables.
-
-Global configuration (recommended):
+Create config folder:
 
     mkdir -p ~/.noorlytics
     cp .env.sample ~/.noorlytics/.env
 
-Edit ~/.noorlytics/.env and add:
+Edit `~/.noorlytics/.env`:
 
     NOOR_LICENSE_KEY=your-license-key
     NOOR_MODE=ollama
+    NOOR_MODEL=mistral
 
-Project-specific configuration (optional):
+---
 
-Create a .env file in a project directory to override global settings.
+### 4. Run your first analysis
 
---------------------------------------------------------------------
+Go to any codebase:
 
-USAGE
+    cd your-project
 
-Analyze a directory:
+Run:
+
+    noor analyze .
+
+Results will appear in:
+
+    ./reports/
+
+---
+
+## Commands
+
+Analyze code:
 
     noor analyze .
 
@@ -116,43 +91,75 @@ Analyze dependencies:
 
     noor analyze-deps requirements.txt
 
-Generate refactoring suggestions:
+Get refactoring suggestions:
 
     noor suggest src/
 
-Generate unit test stubs:
+Generate test stubs:
 
     noor add-tests src/
 
-Check license status (does not consume runs):
+Check license:
 
     noor license-status
 
---------------------------------------------------------------------
+---
 
-OUTPUT
+## Output
 
-- Reports are written to the reports directory
-- Formats:
-  - Markdown (.md)
-  - JSON (.json)
-- Safe to commit or share
+Reports are generated in:
 
---------------------------------------------------------------------
+    ./reports
 
-LOCAL-FIRST & COMPLIANCE
+Formats:
+- Markdown (.md)
+- JSON (.json)
 
-- When using Ollama, no source code is sent to external services
-- Suitable for restricted or regulated environments
-- OpenAI usage is fully opt-in and user-controlled
+Safe to commit.
 
---------------------------------------------------------------------
+---
 
-ROADMAP
+## Configuration
 
-- CI integration
-- Windows support
+Global config:
 
---------------------------------------------------------------------
+    ~/.noorlytics/.env
+
+Project-specific (optional):
+
+    ./.env
+
+---
+
+## Modes
+
+Default (recommended):
+
+    NOOR_MODE=ollama
+
+Optional cloud mode:
+
+    NOOR_MODE=openai
+    OPENAI_API_KEY=your-key
+
+---
+
+## Requirements
+
+- macOS or Linux
+- Ollama installed
+
+No Python or setup needed.
+
+---
+
+## Why Noorlytics?
+
+- Find technical debt faster
+- Catch risky dependencies and licenses
+- Generate actionable improvements
+- Run fully offline
+
+---
 
 Built with care by Aisha Kujovic
