@@ -35,10 +35,7 @@ Download `noorlytics.zip` and unzip it.
 You’ll get:
 
     noor
-    .env.sample
-    README.md
-    LICENSE
-
+    
 Make it executable and move it to your PATH:
 
     chmod +x noor
