@@ -1,8 +1,15 @@
 # Noorlytics CLI
 
-Noorlytics is a local-first CLI that analyzes technical debt, dependencies, and code quality using AI.
+Noorlytics is a local-first CLI for analyzing technical debt, dependencies, and code quality using AI.
 
-It runs locally with Ollama by default. Your code never leaves your machine.
+It runs locally with Ollama by default, so your code never leaves your machine.
+
+---
+
+## Requirements
+
+- macOS or Linux  
+- Ollama  
 
 ---
 
@@ -10,11 +17,11 @@ It runs locally with Ollama by default. Your code never leaves your machine.
 
 ### 1. Install Ollama
 
-**Mac:**
+**macOS**
 
     brew install ollama
 
-**Linux:**
+**Linux**
 
     curl -fsSL https://ollama.com/install.sh | sh
 
@@ -140,13 +147,18 @@ Optional cloud mode:
     OPENAI_API_KEY=your-key
 
 ---
+## Local mode behavior
 
-## Requirements
+Noorlytics automatically adapts to your environment.
 
-- macOS or Linux
-- Ollama installed
+- Local mode prioritizes stability and privacy  
+- Cloud mode prioritizes speed and deeper analysis  
 
-No Python or setup needed.
+If you're running locally, start with the default settings.
+
+If an analysis times out, reducing output (`NOOR_ANALYZE_NUM_PREDICT`) is often more effective than increasing timeout.
+
+See `/docs/local-mode.md` for tuning and advanced configuration.
 
 ---
 
