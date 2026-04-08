@@ -4,6 +4,9 @@ Noorlytics is a local-first CLI for analyzing technical debt, dependencies, and 
 
 It runs locally with Ollama by default, so your code never leaves your machine.
 
+#### Referrals
+- Home page: [noorlytics.se](https://noorlytics.se)
+- LinkedIn: [Noorlytics AI Tech](https://www.linkedin.com/company/noorlytics-ai-tech)
 ---
 
 ## Requirements
@@ -172,3 +175,5 @@ See `/docs/local-mode.md` for tuning and advanced configuration.
 ---
 
 Built with care by Aisha Kujovic
+
+[noorlytics.se](https://noorlytics.se)
