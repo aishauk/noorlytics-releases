@@ -7,14 +7,10 @@ It runs locally with Ollama by default, so your code never leaves your machine.
 #### Referrals
 - Home page: [noorlytics.se](https://noorlytics.se)
 - LinkedIn: [Noorlytics AI Tech](https://www.linkedin.com/company/noorlytics-ai-tech)
----
 
 ## Requirements
-
 - macOS or Linux  
 - Ollama  
-
----
 
 ## Quick Start (2–3 minutes)
 
