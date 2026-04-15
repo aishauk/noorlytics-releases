@@ -1,4 +1,4 @@
-# Noorlytics Tech AI
+# Noorlytics AI Tech
 
 Noorlytics is a local-first CLI for analyzing technical debt, dependencies, and code quality using AI.
 
