@@ -53,8 +53,7 @@ Verify:
 
 ---
 
-### 3. Initialize Noorlytics (recommended)
-
+### 3. Initialize Noorlytics (> v.0.1.1)
 Run:
 
     noor init
@@ -67,8 +66,8 @@ This will:
 
 ---
 
-### Manual configuration (optional)
-
+### Manual configuration (optional, v. 0.1.0)
+(from v. 0.1.0)
 If you prefer manual setup:
 
     mkdir -p ~/.noorlytics
