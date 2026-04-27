@@ -53,14 +53,28 @@ Verify:
 
 ---
 
-### 3. Configure Noorlytics
+### 3. Initialize Noorlytics (recommended)
 
-Create config folder:
+Run:
+
+    noor init
+
+This will:
+
+- ask for your license key  
+- create `~/.noorlytics/.env`  
+- configure Noorlytics automatically  
+
+---
+
+### Manual configuration (optional)
+
+If you prefer manual setup:
 
     mkdir -p ~/.noorlytics
     cp .env.sample ~/.noorlytics/.env
 
-Edit `~/.noorlytics/.env`:
+Edit:
 
     NOOR_LICENSE_KEY=your-license-key
     NOOR_MODE=ollama
